@@ -25,31 +25,50 @@ function AddToDo() {
                 alert("Failed to add todo.");
             });
     }
-    return (<Box
-        component="form"
-        sx={{ display: 'flex', flexDirection:'column', gap: 2, width: '1000px', mx: 'auto', mt: 5 }}
-        onSubmit={handleSubmit}
-    >
-        <TextField
-            label="Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-        />
-
-        <TextField
-            label="Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            multiline
-            rows={4}
-        />
-
-        <Button variant="contained" color="primary" type="submit">
-            Add Todo
-        </Button>
-    </Box>
-    )
+    return (
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minHeight: '100vh',
+            height: "100vh",           
+            width: "100vw", 
+            px: 2,
+          }}
+        >
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 2,
+              width: '100%',
+              maxWidth: 500,
+            }}
+          >
+            <TextField
+              label="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              required
+              fullWidth
+            />
+            <TextField
+              label="Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              multiline
+              rows={4}
+              fullWidth
+            />
+            <Button variant="contained" color="primary" type="submit">
+              Add Todo
+            </Button>
+          </Box>
+        </Box>
+      );
 }
 
 export default AddToDo;

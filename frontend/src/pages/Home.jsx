@@ -32,7 +32,14 @@ function Home() {
           }
 
     return (
-        <div className="home">
+        <div className="home" style={{
+          border: "1px solid",
+          height: "100vh",           
+          width: "100vw",  
+          boxSizing: "border-box",   
+          padding: "16px",           
+          overflowY: "auto",         
+        }}>
             <TodoList todos={todos} />
         </div>
     );

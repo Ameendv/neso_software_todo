@@ -42,31 +42,51 @@ function EditToDo() {
                 alert("Failed to update todo.");
             });
     }
-    return (<Box
-        component="form"
-        sx={{ display: 'flex', flexDirection: 'column', gap: 2, maxWidth: 500, mx: 'auto', mt: 5 }}
-        onSubmit={handleSubmit}
-    >
-        <TextField
-            label="Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-        />
-
-        <TextField
-            label="Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            multiline
-            rows={4}
-        />
-
-        <Button variant="contained" color="primary" type="submit">
-            Submit
-        </Button>
-    </Box>
-    )
+    return (
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minHeight: '100vh',
+            px: 2,
+            height: "100vh",           
+            width: "100vw",  
+          }}
+        >
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 2,
+              width: '100%',
+              maxWidth: 500,
+            }}
+          >
+            <TextField
+              label="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              required
+              fullWidth
+            />
+            <TextField
+              label="Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              multiline
+              rows={4}
+              fullWidth
+            />
+            <Button variant="contained" color="primary" type="submit">
+              Submit
+            </Button>
+          </Box>
+        </Box>
+      );
+  
 }
 
 export default EditToDo;
